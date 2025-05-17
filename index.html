@@ -6,6 +6,61 @@
     <title>Clarity Engineering | Santa Monica | Los Angeles | San Diego | Bay Area</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Color Variables */
+            --celadon: #2C7DA0;
+            --celadon-dark: #1A5276;
+            --celadon-light: #61A5C2;
+            --celadon-pale: #A9D6E5;
+            --indigo-dye: #013a63;
+            --indigo-dye-light: #01497c;
+            --warm-offwhite: #f8f4e9;
+            --warm-offwhite-dark: #e8e4d9;
+        }
+        
+        body {
+            background-color: var(--warm-offwhite);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(28, 125, 160, 0.9) 0%, var(--indigo-dye) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .input-focus:focus {
+            border-color: var(--celadon);
+            box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.3);
+        }
+        
+        .footer-gradient {
+            background: linear-gradient(135deg, var(--celadon) 0%, var(--indigo-dye) 100%);
+        }
+        
+        .bg-warm-offwhite {
+            background-color: var(--warm-offwhite);
+        }
+        
+        .bg-warm-offwhite-dark {
+            background-color: var(--warm-offwhite-dark);
+        }
+        
+        .text-indigo-dye {
+            color: var(--indigo-dye);
+        }
+        
+        .bg-indigo-dye {
+            background-color: var(--indigo-dye);
+        }
+        
+        .border-indigo-dye {
+            border-color: var(--indigo-dye);
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -15,45 +70,33 @@
                         'celadon-dark': '#1A5276',
                         'celadon-light': '#61A5C2',
                         'celadon-pale': '#A9D6E5',
+                        'indigo-dye': '#013a63',
+                        'indigo-dye-light': '#01497c',
+                        'warm-offwhite': '#f8f4e9',
+                        'warm-offwhite-dark': '#e8e4d9',
                     }
                 }
             }
         }
     </script>
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(28, 125, 160, 0.9) 0%, rgba(26, 82, 118, 0.9) 100%);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        .input-focus:focus {
-            border-color: #2C7DA0;
-            box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.3);
-        }
-        .footer-gradient {
-            background: linear-gradient(135deg, #2C7DA0 0%, #1A5276 100%);
-        }
-    </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-sans">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
                     <div class="w-12 h-12 bg-celadon rounded-full flex items-center justify-center text-white font-bold text-xl">CSE</div>
-                    <span class="text-celadon-dark font-semibold text-xl">Clarity Engineering Company</span>
+                    <span class="text-indigo-dye font-semibold text-xl">Clarity Engineering Company</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-celadon-dark hover:text-celadon">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-celadon-dark">Services</a>
-                    <a href="#about" class="text-gray-700 hover:text-celadon-dark">About</a>
-                    <a href="#contact" class="text-gray-700 hover:text-celadon-dark">Contact</a>
-                    <button class="bg-celadon text-white px-4 py-2 rounded-md hover:bg-celadon-dark transition">Client Portal</button>
+                    <a href="#home" class="text-indigo-dye hover:text-celadon">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-indigo-dye">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-dye">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-dye">Contact</a>
+                    <button class="bg-celadon text-white px-4 py-2 rounded-md hover:bg-indigo-dye transition">Client Portal</button>
                 </div>
-                <button class="md:hidden text-celadon-dark">
+                <button class="md:hidden text-indigo-dye">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -67,7 +110,7 @@
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Structural Engineering Excellence in California</h1>
                 <p class="text-gray-200 text-lg mb-8">With over 30 years of combined expertise, our UCLA-trained engineers deliver innovative solutions for your most challenging projects.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-white text-celadon-dark px-6 py-3 rounded-md text-center hover:bg-gray-100 transition font-medium">Get a Quote</a>
+                    <a href="#contact" class="bg-white text-indigo-dye px-6 py-3 rounded-md text-center hover:bg-warm-offwhite transition font-medium">Get a Quote</a>
                     <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-md text-center hover:bg-white hover:bg-opacity-10 transition">Our Services</a>
                 </div>
             </div>
@@ -81,7 +124,7 @@
     <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-celadon-dark mb-2">Our Services</h2>
+                <h2 class="text-3xl font-bold text-indigo-dye mb-2">Our Services</h2>
                 <div class="w-20 h-1 bg-celadon mx-auto"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Comprehensive structural engineering solutions tailored to your project needs across California.</p>
             </div>
@@ -92,7 +135,7 @@
                     <div class="text-celadon mb-4">
                         <i class="fas fa-building text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-2">Residential Design</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Residential Design</h3>
                     <p class="text-gray-600">Custom structural solutions for single-family homes, multi-unit dwellings, and residential renovations.</p>
                 </div>
                 
@@ -101,7 +144,7 @@
                     <div class="text-celadon mb-4">
                         <i class="fas fa-city text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-2">Commercial Projects</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Commercial Projects</h3>
                     <p class="text-gray-600">Structural engineering for retail spaces, offices, and mixed-use developments with complex requirements.</p>
                 </div>
                 
@@ -110,7 +153,7 @@
                     <div class="text-celadon mb-4">
                         <i class="fas fa-hard-hat text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-2">Seismic Retrofitting</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Seismic Retrofitting</h3>
                     <p class="text-gray-600">Earthquake preparedness solutions to protect your property and meet California building codes.</p>
                 </div>
                 
@@ -119,7 +162,7 @@
                     <div class="text-celadon mb-4">
                         <i class="fas fa-drafting-compass text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-2">Structural Analysis</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Structural Analysis</h3>
                     <p class="text-gray-600">Advanced computational modeling to assess structural integrity and performance under various conditions.</p>
                 </div>
                 
@@ -128,7 +171,7 @@
                     <div class="text-celadon mb-4">
                         <i class="fas fa-home text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-2">Foundation Design</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Foundation Design</h3>
                     <p class="text-gray-600">Specialized foundation solutions for challenging soil conditions and unique architectural designs.</p>
                 </div>
                 
@@ -137,7 +180,7 @@
                     <div class="text-celadon mb-4">
                         <i class="fas fa-file-alt text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-2">Construction Documents</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Construction Documents</h3>
                     <p class="text-gray-600">Detailed drawings and specifications for permitting and construction, ensuring code compliance.</p>
                 </div>
             </div>
@@ -145,20 +188,20 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-100">
+    <section id="about" class="py-16 bg-warm-offwhite-dark">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-celadon-dark mb-4">About Our Practice</h2>
+                    <h2 class="text-3xl font-bold text-indigo-dye mb-4">About Our Practice</h2>
                     <div class="w-20 h-1 bg-celadon mb-6"></div>
                     <p class="text-gray-600 mb-4">Founded in 2018 by four UCLA engineering graduates, Coastal Structural Engineering brings together over 30 years of combined experience in structural design and analysis.</p>
                     <p class="text-gray-600 mb-6">Based in Santa Monica, we serve clients throughout California with innovative, cost-effective structural solutions that prioritize safety, sustainability, and architectural vision.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-celadon-dark mb-3">Our Approach</h3>
+                        <h3 class="text-xl font-semibold text-indigo-dye mb-3">Our Approach</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-celadon mt-1 mr-2"></i>
@@ -179,7 +222,7 @@
                         </ul>
                     </div>
                     
-                    <button class="bg-celadon text-white px-6 py-3 rounded-md hover:bg-celadon-dark transition">Meet Our Team</button>
+                    <button class="bg-celadon text-white px-6 py-3 rounded-md hover:bg-indigo-dye transition">Meet Our Team</button>
                 </div>
             </div>
         </div>
@@ -189,18 +232,18 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-celadon-dark mb-2">Online Services</h2>
+                <h2 class="text-3xl font-bold text-indigo-dye mb-2">Online Services</h2>
                 <div class="w-20 h-1 bg-celadon mx-auto"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Convenient digital tools to streamline your project workflow.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Request Quote -->
-                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <div class="bg-warm-offwhite rounded-lg p-6 border border-gray-200">
                     <div class="text-celadon mb-4 text-center">
                         <i class="fas fa-file-invoice-dollar text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-4 text-center">Request a Quote</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-4 text-center">Request a Quote</h3>
                     <form>
                         <div class="mb-4">
                             <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-md input-focus">
@@ -222,16 +265,16 @@
                         <div class="mb-4">
                             <textarea placeholder="Project Details" class="w-full px-4 py-2 border rounded-md input-focus" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-celadon text-white py-2 rounded-md hover:bg-celadon-dark transition">Submit Request</button>
+                        <button type="submit" class="w-full bg-celadon text-white py-2 rounded-md hover:bg-indigo-dye transition">Submit Request</button>
                     </form>
                 </div>
                 
                 <!-- Client Portal -->
-                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <div class="bg-warm-offwhite rounded-lg p-6 border border-gray-200">
                     <div class="text-celadon mb-4 text-center">
                         <i class="fas fa-user-shield text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-4 text-center">Client Portal</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-4 text-center">Client Portal</h3>
                     <p class="text-gray-600 mb-6">Access your project documents, invoices, and messages in our secure client portal.</p>
                     <form>
                         <div class="mb-4">
@@ -240,7 +283,7 @@
                         <div class="mb-4">
                             <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded-md input-focus">
                         </div>
-                        <button type="submit" class="w-full bg-celadon text-white py-2 rounded-md hover:bg-celadon-dark transition">Login</button>
+                        <button type="submit" class="w-full bg-celadon text-white py-2 rounded-md hover:bg-indigo-dye transition">Login</button>
                     </form>
                     <div class="mt-4 text-center">
                         <a href="#" class="text-celadon hover:underline">Forgot password?</a>
@@ -251,11 +294,11 @@
                 </div>
                 
                 <!-- Online Invoicing -->
-                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <div class="bg-warm-offwhite rounded-lg p-6 border border-gray-200">
                     <div class="text-celadon mb-4 text-center">
                         <i class="fas fa-receipt text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-celadon-dark mb-4 text-center">Online Invoicing</h3>
+                    <h3 class="text-xl font-semibold text-indigo-dye mb-4 text-center">Online Invoicing</h3>
                     <p class="text-gray-600 mb-6">View and pay invoices online with our secure payment system.</p>
                     <div class="bg-white p-4 rounded-md border border-gray-200 mb-4">
                         <div class="flex justify-between mb-2">
@@ -271,7 +314,7 @@
                             <span class="font-medium">Nov 15, 2023</span>
                         </div>
                     </div>
-                    <button class="w-full bg-celadon text-white py-2 rounded-md hover:bg-celadon-dark transition">Pay Invoice</button>
+                    <button class="w-full bg-celadon text-white py-2 rounded-md hover:bg-indigo-dye transition">Pay Invoice</button>
                     <div class="mt-4 text-center">
                         <a href="#" class="text-celadon hover:underline">View all invoices</a>
                     </div>
@@ -281,7 +324,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-celadon-dark text-white">
+    <section id="contact" class="py-16 bg-indigo-dye text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">Contact Us</h2>
@@ -314,7 +357,7 @@
                         <div class="mb-4">
                             <textarea placeholder="Your Message" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 input-focus" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-white text-celadon-dark py-2 rounded-md font-medium hover:bg-gray-100 transition">Send Message</button>
+                        <button type="submit" class="w-full bg-white text-indigo-dye py-2 rounded-md font-medium hover:bg-gray-100 transition">Send Message</button>
                     </form>
                 </div>
                 
@@ -391,7 +434,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-celadon-dark font-bold">CSE</div>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-dye font-bold">CSE</div>
                         <span class="font-semibold">Coastal Structural Engineering</span>
                     </div>
                     <p class="text-gray-300">Providing innovative structural engineering solutions throughout California since 2018.</p>
