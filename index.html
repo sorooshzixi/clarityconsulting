@@ -110,6 +110,28 @@
             opacity: 1;
             pointer-events: auto;
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px; /* Adjust based on your content */
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--indigo-dye);
+            transition: background-color 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            background-color: var(--warm-offwhite-dark);
+        }
     </style>
     <script>
         tailwind.config = {
@@ -140,15 +162,24 @@
                     <span id="company-name" class="company-name text-indigo-dye font-semibold">Clarity Engineering Company</span>
                 </div>
                 <div id="nav-buttons" class="nav-buttons hidden md:flex items-center space-x-8">
-<!--                    <a href="#home" class="text-indigo-dye hover:text-celadon">Home</a>     -->
                     <a href="#services" class="text-gray-700 hover:text-indigo-dye">Services</a>
                     <a href="#about" class="text-gray-700 hover:text-indigo-dye">Portofolio</a>
                     <a href="#contact" class="text-gray-700 hover:text-indigo-dye">Contact</a>
                     <button class="bg-celadon text-white px-4 py-2 rounded-md hover:bg-indigo-dye transition">Press</button>
                 </div>
-                <button class="md:hidden text-indigo-dye">
+                <button id="mobile-menu-button" class="md:hidden text-indigo-dye">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+                <div class="py-2">
+                    <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+                    <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portofolio</a>
+                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+                    <button class="w-full text-left px-4 py-2 bg-celadon text-white rounded-md hover:bg-indigo-dye transition">Press</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -542,6 +573,34 @@
 </footer>
 
 <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        
+        // Change icon based on menu state
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('open')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+
     // Header shrink on scroll
     window.addEventListener('scroll', function() {
         const header = document.getElementById('main-header');
