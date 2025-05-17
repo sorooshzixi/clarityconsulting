@@ -60,6 +60,44 @@
         .border-indigo-dye {
             border-color: var(--indigo-dye);
         }
+        
+        /* Header transition styles */
+        .header {
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+        }
+        
+        .header.shrink {
+            padding: 0.75rem 0;
+        }
+        
+        .logo-container {
+            transition: all 0.3s ease;
+        }
+        
+        .logo-container.shrink {
+            transform: scale(0.8);
+        }
+        
+        .logo {
+            transition: all 0.3s ease;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .logo.shrink {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .company-name {
+            transition: all 0.3s ease;
+            font-size: 1.75rem;
+        }
+        
+        .company-name.shrink {
+            font-size: 1.25rem;
+        }
     </style>
     <script>
         tailwind.config = {
@@ -82,12 +120,12 @@
 </head>
 <body class="font-sans">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3">
+    <nav id="main-header" class="header bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-celadon rounded-full flex items-center justify-center text-white font-bold text-xl">CSE</div>
-                    <span class="text-indigo-dye font-semibold text-xl">Clarity Engineering Company</span>
+                <div id="logo-container" class="logo-container flex items-center space-x-4">
+                    <div id="logo" class="logo bg-celadon rounded-full flex items-center justify-center text-white font-bold text-2xl">CSE</div>
+                    <span id="company-name" class="company-name text-indigo-dye font-semibold">Clarity Engineering Company</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-indigo-dye hover:text-celadon">Home</a>
@@ -104,7 +142,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient py-20">
+    <section id="home" class="hero-gradient py-20 mt-4">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-10 md:mb-0">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Structural Engineering Excellence in California</h1>
@@ -387,129 +425,149 @@
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-clock mt-1 mr-4 text-celadon-pale"></i>
-                            <div>
-                                <h4 class="font-medium">Hours</h4>
-                                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-medium mb-4">Service Areas</h4>
-                        <div class="grid grid-cols-2 gap-2">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                                <span>Los Angeles</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                                <span>Orange County</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                                <span>San Diego</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                                <span>San Francisco</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                                <span>Sacramento</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                                <span>All California</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <h4 class="font-medium">Hours</h4>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
             </div>
         </div>
-    </section>
+    </div>
+    
+    <div class="mt-8">
+        <h4 class="font-medium mb-4">Service Areas</h4>
+        <div class="grid grid-cols-2 gap-2">
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
+                <span>Los Angeles</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
+                <span>Orange County</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
+                <span>San Diego</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
+                <span>San Francisco</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
+                <span>Sacramento</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
+                <span>All California</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer-gradient text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-dye font-bold">CSE</div>
-                        <span class="font-semibold">Coastal Structural Engineering</span>
-                    </div>
-                    <p class="text-gray-300">Providing innovative structural engineering solutions throughout California since 2018.</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
-                    </div>
+<!-- Footer -->
+<footer class="footer-gradient text-white py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-dye font-bold">CSE</div>
+                    <span class="font-semibold">Coastal Structural Engineering</span>
                 </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-300 hover:text-white">Home</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Residential Design</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Seismic Retrofitting</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Structural Analysis</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Foundation Design</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
-                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-gray-800 w-full">
-                        <button type="submit" class="bg-celadon-pale px-4 py-2 rounded-r-md hover:bg-blue-400 transition">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <p class="text-gray-300">Providing innovative structural engineering solutions throughout California since 2018.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             
-            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2023 Coastal Structural Engineering. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-300 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-300 hover:text-white text-sm">Sitemap</a>
-                </div>
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-300 hover:text-white">Home</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white">Residential Design</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Seismic Retrofitting</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Structural Analysis</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Foundation Design</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
+                <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-gray-800 w-full">
+                    <button type="submit" class="bg-celadon-pale px-4 py-2 rounded-r-md hover:bg-blue-400 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+        
+        <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2023 Coastal Structural Engineering. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white text-sm">Terms of Service</a>
+                <a href="#" class="text-gray-300 hover:text-white text-sm">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <script>
-        // Simple form validation for demo purposes
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your submission! We will contact you shortly.');
-                this.reset();
+<script>
+    // Header shrink on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('main-header');
+        const logo = document.getElementById('logo');
+        const logoContainer = document.getElementById('logo-container');
+        const companyName = document.getElementById('company-name');
+        
+        if (window.scrollY > 50) {
+            header.classList.add('shrink');
+            logo.classList.add('shrink');
+            logoContainer.classList.add('shrink');
+            companyName.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+            logo.classList.remove('shrink');
+            logoContainer.classList.remove('shrink');
+            companyName.classList.remove('shrink');
+        }
+    });
+
+    // Simple form validation for demo purposes
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your submission! We will contact you shortly.');
+            this.reset();
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
