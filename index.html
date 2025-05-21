@@ -8,63 +8,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Color Variables */
-            --celadon: #2C7DA0;
-            --celadon-dark: #1A5276;
-            --celadon-light: #61A5C2;
-            --celadon-pale: #A9D6E5;
-            --indigo-dye: #013a63;
-            --indigo-dye-light: #01497c;
-            --warm-offwhite: #f8f4e9;
-            --warm-offwhite-dark: #e8e4d9;
+            /* New Color Variables */
+            --primary-blue: #1E88E5;
+            --primary-teal: #00796B;
+            --light-gray: #f9fafb;
+            --medium-gray: #e5e7eb;
+            --dark-gray: #374151;
         }
         
         body {
-            background-color: var(--warm-offwhite);
+            background-color: var(--light-gray);
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(28, 125, 160, 0.9) 0%, var(--indigo-dye) 100%);
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.9) 0%, var(--primary-teal) 100%);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .input-focus:focus {
-            border-color: var(--celadon);
-            box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.3);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
         }
         
         .footer-gradient {
-            background: linear-gradient(135deg, var(--celadon) 0%, var(--indigo-dye) 100%);
-        }
-        
-        .bg-warm-offwhite {
-            background-color: var(--warm-offwhite);
-        }
-        
-        .bg-warm-offwhite-dark {
-            background-color: var(--warm-offwhite-dark);
-        }
-        
-        .text-indigo-dye {
-            color: var(--indigo-dye);
-        }
-        
-        .bg-indigo-dye {
-            background-color: var(--indigo-dye);
-        }
-        
-        .border-indigo-dye {
-            border-color: var(--indigo-dye);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%);
         }
         
         /* Header transition styles */
         .header {
             transition: all 0.3s ease;
-            padding: 3rem 0; /* Increased initial padding */
+            padding: 3rem 0;
         }
         
         .header.shrink {
@@ -81,8 +58,8 @@
         
         .logo {
             transition: all 0.3s ease;
-            width: 120px; /* Increased initial size */
-            height: 120px; /* Increased initial size */
+            width: 120px;
+            height: 120px;
         }
         
         .logo.shrink {
@@ -92,7 +69,7 @@
         
         .company-name {
             transition: all 0.3s ease;
-            font-size: 2.5rem; /* Increased initial size */
+            font-size: 2.5rem;
         }
         
         .company-name.shrink {
@@ -102,7 +79,7 @@
         /* Navigation buttons */
         .nav-buttons {
             opacity: 0;
-            transition: opacity 0.3s ease 0.3s; /* Delayed appearance */
+            transition: opacity 0.3s ease 0.3s;
             pointer-events: none;
         }
         
@@ -119,18 +96,32 @@
         }
         
         .mobile-menu.open {
-            max-height: 500px; /* Adjust based on your content */
+            max-height: 500px;
         }
         
         .mobile-menu a {
             display: block;
             padding: 0.75rem 1rem;
-            color: var(--indigo-dye);
+            color: var(--dark-gray);
             transition: background-color 0.3s ease;
         }
         
         .mobile-menu a:hover {
-            background-color: var(--warm-offwhite-dark);
+            background-color: var(--medium-gray);
+        }
+        
+        /* Service section styles */
+        .service-section {
+            padding: 6rem 0;
+            scroll-margin-top: 100px;
+        }
+        
+        .service-section:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .service-section:nth-child(even) {
+            background-color: var(--light-gray);
         }
     </style>
     <script>
@@ -138,14 +129,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'celadon': '#2C7DA0',
-                        'celadon-dark': '#1A5276',
-                        'celadon-light': '#61A5C2',
-                        'celadon-pale': '#A9D6E5',
-                        'indigo-dye': '#013a63',
-                        'indigo-dye-light': '#01497c',
-                        'warm-offwhite': '#f8f4e9',
-                        'warm-offwhite-dark': '#e8e4d9',
+                        'primary-blue': '#1E88E5',
+                        'primary-teal': '#00796B',
+                        'light-gray': '#f9fafb',
+                        'medium-gray': '#e5e7eb',
+                        'dark-gray': '#374151',
                     }
                 }
             }
@@ -158,16 +146,16 @@
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
                 <div id="logo-container" class="logo-container flex items-center space-x-4">
-                    <div id="logo" class="logo bg-celadon rounded-full flex items-center justify-center text-white font-bold text-4xl">C.E.</div>
-                    <span id="company-name" class="company-name text-indigo-dye font-semibold">Clarity Engineering Company</span>
+                    <img id="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiIGZpbGw9IiMxRTg4RTUiLz48L3N2Zz4=" alt="Logo" class="logo rounded-full">
+                    <span id="company-name" class="company-name text-dark-gray font-semibold">Clarity Engineering Company</span>
                 </div>
                 <div id="nav-buttons" class="nav-buttons hidden md:flex items-center space-x-8">
-                    <a href="#services" class="text-gray-700 hover:text-indigo-dye">Services</a>
-                    <a href="#about" class="text-gray-700 hover:text-indigo-dye">Portofolio</a>
-                    <a href="#contact" class="text-gray-700 hover:text-indigo-dye">Contact</a>
-                    <button class="bg-celadon text-white px-4 py-2 rounded-md hover:bg-indigo-dye transition">Press</button>
+                    <a href="#services" class="text-gray-700 hover:text-primary-blue">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary-blue">Portfolio</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-blue">Contact</a>
+                    <button class="bg-primary-blue text-white px-4 py-2 rounded-md hover:bg-primary-teal transition">Press</button>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-indigo-dye">
+                <button id="mobile-menu-button" class="md:hidden text-dark-gray">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -176,9 +164,9 @@
             <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
                 <div class="py-2">
                     <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
-                    <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portofolio</a>
+                    <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
                     <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
-                    <button class="w-full text-left px-4 py-2 bg-celadon text-white rounded-md hover:bg-indigo-dye transition">Press</button>
+                    <button class="w-full text-left px-4 py-2 bg-primary-blue text-white rounded-md hover:bg-primary-teal transition">Press</button>
                 </div>
             </div>
         </div>
@@ -191,7 +179,7 @@
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Based in Santa Monica, shaping the California skyline.</h1>
                 <p class="text-gray-200 text-lg mb-8">With over 30 years of combined expertise, our UCLA-trained engineers deliver innovative solutions for your most challenging projects.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-white text-indigo-dye px-6 py-3 rounded-md text-center hover:bg-warm-offwhite transition font-medium">Get a Quote</a>
+                    <a href="#contact" class="bg-white text-primary-teal px-6 py-3 rounded-md text-center hover:bg-gray-100 transition font-medium">Get a Quote</a>
                     <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-md text-center hover:bg-white hover:bg-opacity-10 transition">Our Services</a>
                 </div>
             </div>
@@ -201,109 +189,91 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Overview Section -->
     <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-indigo-dye mb-2">Our Services</h2>
-                <div class="w-20 h-1 bg-celadon mx-auto"></div>
+                <h2 class="text-3xl font-bold text-dark-gray mb-2">Our Services</h2>
+                <div class="w-20 h-1 bg-primary-blue mx-auto"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Comprehensive structural engineering solutions tailored to your project needs across California.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service Card 1 -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100">
-                    <div class="text-celadon mb-4">
-                        <i class="fas fa-building text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Residential Design</h3>
-                    <p class="text-gray-600">Custom structural solutions for single-family homes, multi-unit dwellings, and residential renovations.</p>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100">
-                    <div class="text-celadon mb-4">
-                        <i class="fas fa-city text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Commercial Projects</h3>
-                    <p class="text-gray-600">Structural engineering for retail spaces, offices, and mixed-use developments with complex requirements.</p>
-                </div>
-                
-                <!-- Service Card 3 -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100">
-                    <div class="text-celadon mb-4">
-                        <i class="fas fa-hard-hat text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Seismic Retrofitting</h3>
-                    <p class="text-gray-600">Earthquake preparedness solutions to protect your property and meet California building codes.</p>
-                </div>
-                
-                <!-- Service Card 4 -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100">
-                    <div class="text-celadon mb-4">
-                        <i class="fas fa-drafting-compass text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Structural Analysis</h3>
-                    <p class="text-gray-600">Advanced computational modeling to assess structural integrity and performance under various conditions.</p>
-                </div>
-                
-                <!-- Service Card 5 -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100">
-                    <div class="text-celadon mb-4">
+                <a href="#residential" class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100 hover:border-primary-blue">
+                    <div class="text-primary-blue mb-4">
                         <i class="fas fa-home text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Foundation Design</h3>
-                    <p class="text-gray-600">Specialized foundation solutions for challenging soil conditions and unique architectural designs.</p>
-                </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Residential Design</h3>
+                    <p class="text-gray-600">Custom structural solutions for single-family homes, multi-unit dwellings, and residential renovations.</p>
+                </a>
                 
-                <!-- Service Card 6 -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100">
-                    <div class="text-celadon mb-4">
-                        <i class="fas fa-file-alt text-4xl"></i>
+                <!-- Service Card 2 -->
+                <a href="#commercial" class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100 hover:border-primary-blue">
+                    <div class="text-primary-blue mb-4">
+                        <i class="fas fa-city text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-2">Construction Documents</h3>
-                    <p class="text-gray-600">Detailed drawings and specifications for permitting and construction, ensuring code compliance.</p>
-                </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Commercial Projects</h3>
+                    <p class="text-gray-600">Structural engineering for retail spaces, offices, and mixed-use developments with complex requirements.</p>
+                </a>
+                
+                <!-- Service Card 3 -->
+                <a href="#soft-story" class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100 hover:border-primary-blue">
+                    <div class="text-primary-blue mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Soft-Story Ordinance</h3>
+                    <p class="text-gray-600">Compliance solutions for soft-story buildings to meet seismic safety requirements and local ordinances.</p>
+                </a>
+                
+                <!-- Service Card 4 -->
+                <a href="#hillside" class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100 hover:border-primary-blue">
+                    <div class="text-primary-blue mb-4">
+                        <i class="fas fa-mountain text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Hill-side Developments</h3>
+                    <p class="text-gray-600">Specialized engineering for hillside properties with challenging topography and geological conditions.</p>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-warm-offwhite-dark">
+    <section id="about" class="py-16 bg-light-gray">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-indigo-dye mb-4">About Our Practice</h2>
-                    <div class="w-20 h-1 bg-celadon mb-6"></div>
+                    <h2 class="text-3xl font-bold text-dark-gray mb-4">About Our Practice</h2>
+                    <div class="w-20 h-1 bg-primary-blue mb-6"></div>
                     <p class="text-gray-600 mb-4">Founded in 2018 by four UCLA engineering graduates, Clarity Engineering brings together over 30 years of combined experience in structural design and analysis.</p>
                     <p class="text-gray-600 mb-6">Based in Santa Monica, we serve clients throughout California with innovative, cost-effective structural solutions that prioritize safety, sustainability, and architectural vision.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-indigo-dye mb-3">Our Approach</h3>
+                        <h3 class="text-xl font-semibold text-dark-gray mb-3">Our Approach</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-celadon mt-1 mr-2"></i>
+                                <i class="fas fa-check-circle text-primary-blue mt-1 mr-2"></i>
                                 <span class="text-gray-600">Collaborative process with architects and builders</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-celadon mt-1 mr-2"></i>
+                                <i class="fas fa-check-circle text-primary-blue mt-1 mr-2"></i>
                                 <span class="text-gray-600">State-of-the-art analysis tools and techniques</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-celadon mt-1 mr-2"></i>
+                                <i class="fas fa-check-circle text-primary-blue mt-1 mr-2"></i>
                                 <span class="text-gray-600">Meticulous attention to California building codes</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-celadon mt-1 mr-2"></i>
+                                <i class="fas fa-check-circle text-primary-blue mt-1 mr-2"></i>
                                 <span class="text-gray-600">Sustainable and resilient design principles</span>
                             </li>
                         </ul>
                     </div>
                     
-                    <button class="bg-celadon text-white px-6 py-3 rounded-md hover:bg-indigo-dye transition">Meet Our Team</button>
+                    <button class="bg-primary-blue text-white px-6 py-3 rounded-md hover:bg-primary-teal transition">Meet Our Team</button>
                 </div>
             </div>
         </div>
@@ -313,18 +283,18 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-indigo-dye mb-2">Online Services</h2>
-                <div class="w-20 h-1 bg-celadon mx-auto"></div>
+                <h2 class="text-3xl font-bold text-dark-gray mb-2">Online Services</h2>
+                <div class="w-20 h-1 bg-primary-blue mx-auto"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Convenient digital tools to streamline your project workflow.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Request Quote -->
-                <div class="bg-warm-offwhite rounded-lg p-6 border border-gray-200">
-                    <div class="text-celadon mb-4 text-center">
+                <div class="bg-light-gray rounded-lg p-6 border border-gray-200">
+                    <div class="text-primary-blue mb-4 text-center">
                         <i class="fas fa-file-invoice-dollar text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-4 text-center">Request a Quote</h3>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-4 text-center">Request a Quote</h3>
                     <form>
                         <div class="mb-4">
                             <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-md input-focus">
@@ -337,25 +307,23 @@
                                 <option value="">Select Service</option>
                                 <option value="residential">Residential Design</option>
                                 <option value="commercial">Commercial Projects</option>
-                                <option value="seismic">Seismic Retrofitting</option>
-                                <option value="analysis">Structural Analysis</option>
-                                <option value="foundation">Foundation Design</option>
-                                <option value="documents">Construction Documents</option>
+                                <option value="soft-story">Soft-Story Ordinance</option>
+                                <option value="hillside">Hill-side Developments</option>
                             </select>
                         </div>
                         <div class="mb-4">
                             <textarea placeholder="Project Details" class="w-full px-4 py-2 border rounded-md input-focus" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-celadon text-white py-2 rounded-md hover:bg-indigo-dye transition">Submit Request</button>
+                        <button type="submit" class="w-full bg-primary-blue text-white py-2 rounded-md hover:bg-primary-teal transition">Submit Request</button>
                     </form>
                 </div>
                 
                 <!-- Client Portal -->
-                <div class="bg-warm-offwhite rounded-lg p-6 border border-gray-200">
-                    <div class="text-celadon mb-4 text-center">
+                <div class="bg-light-gray rounded-lg p-6 border border-gray-200">
+                    <div class="text-primary-blue mb-4 text-center">
                         <i class="fas fa-user-shield text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-4 text-center">Client Portal</h3>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-4 text-center">Client Portal</h3>
                     <p class="text-gray-600 mb-6">Access your project documents, invoices, and messages in our secure client portal.</p>
                     <form>
                         <div class="mb-4">
@@ -364,22 +332,22 @@
                         <div class="mb-4">
                             <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded-md input-focus">
                         </div>
-                        <button type="submit" class="w-full bg-celadon text-white py-2 rounded-md hover:bg-indigo-dye transition">Login</button>
+                        <button type="submit" class="w-full bg-primary-blue text-white py-2 rounded-md hover:bg-primary-teal transition">Login</button>
                     </form>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-celadon hover:underline">Forgot password?</a>
+                        <a href="#" class="text-primary-blue hover:underline">Forgot password?</a>
                     </div>
                     <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-gray-600 text-sm">New client? <a href="#" class="text-celadon hover:underline">Register here</a></p>
+                        <p class="text-gray-600 text-sm">New client? <a href="#" class="text-primary-blue hover:underline">Register here</a></p>
                     </div>
                 </div>
                 
                 <!-- Online Invoicing -->
-                <div class="bg-warm-offwhite rounded-lg p-6 border border-gray-200">
-                    <div class="text-celadon mb-4 text-center">
+                <div class="bg-light-gray rounded-lg p-6 border border-gray-200">
+                    <div class="text-primary-blue mb-4 text-center">
                         <i class="fas fa-receipt text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-indigo-dye mb-4 text-center">Online Invoicing</h3>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-4 text-center">Online Invoicing</h3>
                     <p class="text-gray-600 mb-6">View and pay invoices online with our secure payment system.</p>
                     <div class="bg-white p-4 rounded-md border border-gray-200 mb-4">
                         <div class="flex justify-between mb-2">
@@ -395,21 +363,208 @@
                             <span class="font-medium">Nov 15, 2023</span>
                         </div>
                     </div>
-                    <button class="w-full bg-celadon text-white py-2 rounded-md hover:bg-indigo-dye transition">Pay Invoice</button>
+                    <button class="w-full bg-primary-blue text-white py-2 rounded-md hover:bg-primary-teal transition">Pay Invoice</button>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-celadon hover:underline">View all invoices</a>
+                        <a href="#" class="text-primary-blue hover:underline">View all invoices</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Service Detail Sections -->
+    <!-- Residential Service -->
+    <section id="residential" class="service-section">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Residential Design" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-dark-gray mb-4">Residential Design</h2>
+                    <div class="w-20 h-1 bg-primary-blue mb-6"></div>
+                    <p class="text-gray-600 mb-6">Our residential structural engineering services combine aesthetic vision with technical excellence to create safe, durable, and beautiful homes.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-3">Our Residential Services Include:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Custom single-family home structural design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Multi-unit residential buildings and townhomes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Home additions and renovation structural plans</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Second-story additions and foundation upgrades</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Seismic retrofitting for existing homes</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary-blue text-white px-6 py-3 rounded-md hover:bg-primary-teal transition">Get a Residential Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Service -->
+    <section id="commercial" class="service-section">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 order-1 md:order-2 md:pl-10">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial Projects" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-dark-gray mb-4">Commercial Projects</h2>
+                    <div class="w-20 h-1 bg-primary-blue mb-6"></div>
+                    <p class="text-gray-600 mb-6">We provide comprehensive structural engineering services for commercial projects of all sizes, from small retail spaces to large mixed-use developments.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-3">Commercial Project Expertise:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Retail centers and shopping complexes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Office buildings and corporate campuses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Restaurants and hospitality venues</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Mixed-use developments with residential/commercial</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Parking structures and garages</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary-blue text-white px-6 py-3 rounded-md hover:bg-primary-teal transition">Get a Commercial Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft-Story Ordinance Service -->
+    <section id="soft-story" class="service-section">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1326&q=80" alt="Soft-Story Ordinance" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-dark-gray mb-4">Soft-Story Ordinance Compliance</h2>
+                    <div class="w-20 h-1 bg-primary-blue mb-6"></div>
+                    <p class="text-gray-600 mb-6">We specialize in helping property owners comply with soft-story retrofit ordinances throughout California, ensuring buildings meet seismic safety standards.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-3">Our Soft-Story Services:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Initial evaluation and feasibility studies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Complete structural analysis and design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Permit-ready construction documents</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Coordination with local building departments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Construction administration and inspection</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-primary-blue bg-opacity-10 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold text-primary-blue mb-2">Did You Know?</h4>
+                        <p class="text-gray-600">Many California cities have mandatory soft-story retrofit programs for vulnerable buildings. We can help determine if your property is affected.</p>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary-blue text-white px-6 py-3 rounded-md hover:bg-primary-teal transition">Learn About Compliance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hill-side Developments Service -->
+    <section id="hillside" class="service-section">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 order-1 md:order-2 md:pl-10">
+                    <img src="https://images.unsplash.com/photo-1603921326210-6edd6d0bf2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Hill-side Developments" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-dark-gray mb-4">Hill-side Developments</h2>
+                    <div class="w-20 h-1 bg-primary-blue mb-6"></div>
+                    <p class="text-gray-600 mb-6">Our team has extensive experience designing structures for challenging hillside sites, addressing slope stability, foundation design, and geotechnical considerations.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-3">Hillside Engineering Solutions:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Slope stability analysis and mitigation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Retaining wall design and analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Deep foundation systems for steep slopes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Grading plans and earthwork analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary-blue mt-1 mr-2"></i>
+                                <span class="text-gray-600">Geohazard assessment and mitigation</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-primary-blue bg-opacity-10 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold text-primary-blue mb-2">Why Choose Us?</h4>
+                        <p class="text-gray-600">Our engineers have successfully completed hundreds of hillside projects throughout Southern California's most challenging terrain.</p>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary-blue text-white px-6 py-3 rounded-md hover:bg-primary-teal transition">Discuss Your Hillside Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-indigo-dye text-white">
+    <section id="contact" class="py-16 bg-primary-teal text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">Contact Us</h2>
-                <div class="w-20 h-1 bg-celadon-pale mx-auto"></div>
+                <div class="w-20 h-1 bg-white bg-opacity-50 mx-auto"></div>
                 <p class="mt-4 max-w-2xl mx-auto">Reach out to discuss your project or schedule a consultation with our engineering team.</p>
             </div>
             
@@ -429,8 +584,10 @@
                         <div class="mb-4">
                             <select class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 text-white input-focus">
                                 <option value="">How can we help you?</option>
-                                <option value="quote">Request a Quote</option>
-                                <option value="consultation">Schedule Consultation</option>
+                                <option value="residential">Residential Design</option>
+                                <option value="commercial">Commercial Projects</option>
+                                <option value="soft-story">Soft-Story Ordinance</option>
+                                <option value="hillside">Hill-side Developments</option>
                                 <option value="question">General Question</option>
                                 <option value="careers">Careers</option>
                             </select>
@@ -438,7 +595,7 @@
                         <div class="mb-4">
                             <textarea placeholder="Your Message" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 input-focus" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-white text-indigo-dye py-2 rounded-md font-medium hover:bg-gray-100 transition">Send Message</button>
+                        <button type="submit" class="w-full bg-white text-primary-teal py-2 rounded-md font-medium hover:bg-gray-100 transition">Send Message</button>
                     </form>
                 </div>
                 
@@ -446,202 +603,201 @@
                     <h3 class="text-xl font-semibold mb-4">Our Office</h3>
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-4 text-celadon-pale"></i>
+                            <i class="fas fa-map-marker-alt mt-1 mr-4 text-white"></i>
                             <div>
                                 <h4 class="font-medium">Address</h4>
                                 <p>1234 Ocean Avenue, Suite 200<br>Santa Monica, CA 90401</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-4 text-celadon-pale"></i>
+                            <i class="fas fa-phone-alt mt-1 mr-4 text-white"></i>
                             <div>
                                 <h4 class="font-medium">Phone</h4>
                                 <p>(310) ###-####</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-4 text-celadon-pale"></i>
+                            <i class="fas fa-envelope mt-1 mr-4 text-white"></i>
                             <div>
                                 <h4 class="font-medium">Email</h4>
                                 <p>info@clarityengineering.com</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-clock mt-1 mr-4 text-celadon-pale"></i>
-            <div>
-                <h4 class="font-medium">Hours</h4>
-                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday - Sunday: Closed</p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="mt-8">
-        <h4 class="font-medium mb-4">Service Areas</h4>
-        <div class="grid grid-cols-2 gap-2">
-            <div class="flex items-center">
-                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                <span>Los Angeles</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                <span>Orange County</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                <span>San Diego</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                <span>San Francisco</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                <span>Sacramento</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-check-circle mr-2 text-sm text-celadon-pale"></i>
-                <span>All California</span>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="footer-gradient text-white py-12">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <div class="flex items-center space-x-2 mb-4">
-                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-dye font-bold">C.E. Co.</div>
-                    <span class="font-semibold">Clarity Engineering</span>
-                </div>
-                <p class="text-gray-300">Building the California skyline since 2018.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <i class="fas fa-clock mt-1 mr-4 text-white"></i>
+                            <div>
+                                <h4 class="font-medium">Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday - Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Service Areas</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-sm text-white"></i>
+                                <span>Los Angeles</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-sm text-white"></i>
+                                <span>Orange County</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-sm text-white"></i>
+                                <span>San Diego</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-sm text-white"></i>
+                                <span>San Francisco</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-sm text-white"></i>
+                                <span>Sacramento</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 text-sm text-white"></i>
+                                <span>All California</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div>
-                <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="#home" class="text-gray-300 hover:text-white">Home</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
-                    <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
-                    <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
-                </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0id2hpdGUiLz48L3N2Zz4=" alt="Logo" class="w-10 h-10 rounded-full">
+                        <span class="font-semibold">Clarity Engineering</span>
+                    </div>
+                    <p class="text-gray-300">Building the California skyline since 2018.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#residential" class="text-gray-300 hover:text-white">Residential Design</a></li>
+                        <li><a href="#commercial" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
+                        <li><a href="#soft-story" class="text-gray-300 hover:text-white">Soft-Story Ordinance</a></li>
+                        <li><a href="#hillside" class="text-gray-300 hover:text-white">Hill-side Developments</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-gray-800 w-full">
+                        <button type="submit" class="bg-white px-4 py-2 rounded-r-md hover:bg-gray-100 transition">
+                            <i class="fas fa-paper-plane text-primary-teal"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
-            
-            <div>
-                <h4 class="font-semibold text-lg mb-4">Services</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-white">Residential Design</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Seismic Retrofitting</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-white">Structural Analysis</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-white">Foundation Design</a></li>
-        </ul>
-    </div>
-    
-    <div>
-        <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
-        <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
-        <form class="flex">
-            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-gray-800 w-full">
-            <button type="submit" class="bg-celadon-pale px-4 py-2 rounded-r-md hover:bg-blue-400 transition">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </form>
-    </div>
-</div>
 
-<div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-    <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2025 Clarity Engineering Co. All rights reserved.</p>
-    <div class="flex space-x-6">
-        <a href="#" class="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
-        <a href="#" class="text-gray-300 hover:text-white text-sm">Terms of Service</a>
-        <a href="#" class="text-gray-300 hover:text-white text-sm">Sitemap</a>
-    </div>
-</div>
-</div>
-</footer>
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2025 Clarity Engineering Co. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-300 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<script>
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('open');
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        // Change icon based on menu state
-        const icon = mobileMenuButton.querySelector('i');
-        if (mobileMenu.classList.contains('open')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-    
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('open');
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            
+            // Change icon based on menu state
             const icon = mobileMenuButton.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
-    });
-
-    // Header shrink on scroll
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('main-header');
-        const logo = document.getElementById('logo');
-        const logoContainer = document.getElementById('logo-container');
-        const companyName = document.getElementById('company-name');
-        const navButtons = document.getElementById('nav-buttons');
         
-        if (window.scrollY > 50) {
-            header.classList.add('shrink');
-            logo.classList.add('shrink');
-            logoContainer.classList.add('shrink');
-            companyName.classList.add('shrink');
-            navButtons.classList.add('visible');
-        } else {
-            header.classList.remove('shrink');
-            logo.classList.remove('shrink');
-            logoContainer.classList.remove('shrink');
-            companyName.classList.remove('shrink');
-            navButtons.classList.remove('visible');
-        }
-    });
-
-    // Simple form validation for demo purposes
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your submission! We will contact you shortly.');
-            this.reset();
-        });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
         });
-    });
-</script>
+
+        // Header shrink on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            const logo = document.getElementById('logo');
+            const logoContainer = document.getElementById('logo-container');
+            const companyName = document.getElementById('company-name');
+            const navButtons = document.getElementById('nav-buttons');
+            
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+                logo.classList.add('shrink');
+                logoContainer.classList.add('shrink');
+                companyName.classList.add('shrink');
+                navButtons.classList.add('visible');
+            } else {
+                header.classList.remove('shrink');
+                logo.classList.remove('shrink');
+                logoContainer.classList.remove('shrink');
+                companyName.classList.remove('shrink');
+                navButtons.classList.remove('visible');
+            }
+        });
+
+        // Simple form validation for demo purposes
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! We will contact you shortly.');
+                this.reset();
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
