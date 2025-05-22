@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #FF6B35;  /* Vibrant orange */
-            --secondary: #004E89; /* Deep blue */
-            --accent: #00A5E0;    /* Bright teal */
-            --dark: #292F36;      /* Dark slate */
-            --light: #F7F7F7;     /* Off-white */
-            --fire-accent: #FF3D00; /* Fire orange-red */
+            --primary: #228B22;    /* Forest Green */
+            --secondary: #333333;  /* Charcoal Gray */
+            --accent: #F4EBD0;     /* Warm Sand */
+            --dark: #1A1A1A;       /* Darker Gray */
+            --light: #F8F8F8;      /* Light background */
+            --special: #E5CBA2;    /* Alternative Warm Sand */
         }
         
         body {
             background-color: var(--light);
-            color: var(--dark);
+            color: var(--secondary);
         }
         
         .hero-gradient {
@@ -30,29 +30,29 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        .fire-service {
-            border-left: 5px solid var(--fire-accent);
+        .special-service {
+            border-left: 5px solid var(--special);
             position: relative;
             overflow: hidden;
         }
         
-        .fire-service::before {
+        .special-service::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255,61,0,0.05) 0%, rgba(255,107,53,0.05) 100%);
+            background: linear-gradient(135deg, rgba(229,203,162,0.05) 0%, rgba(244,235,208,0.05) 100%);
             z-index: -1;
         }
         
-        .fire-badge {
+        .special-badge {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: var(--fire-accent);
-            color: white;
+            background-color: var(--special);
+            color: var(--secondary);
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -69,12 +69,12 @@
         }
         
         .input-focus:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 165, 224, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
         }
         
         .footer-gradient {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
         }
         
         /* Header transition styles */
@@ -143,12 +143,12 @@
         .mobile-menu a {
             display: block;
             padding: 0.75rem 1rem;
-            color: var(--dark);
+            color: var(--secondary);
             transition: background-color 0.3s ease;
         }
         
         .mobile-menu a:hover {
-            background-color: rgba(0, 78, 137, 0.1);
+            background-color: rgba(34, 139, 34, 0.1);
         }
         
         /* Service section styles */
@@ -165,23 +165,73 @@
             background-color: var(--light);
         }
         
-        .fire-section {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,235,230,0.9) 100%);
+        .special-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(244,235,208,0.3) 100%);
             position: relative;
             overflow: hidden;
         }
         
-        .fire-section::before {
+        .special-section::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23FF3D00" fill-opacity="0.05" d="M30,50 Q50,20 70,50 Q85,70 65,85 Q50,95 30,75 Q15,60 30,50 Z" /></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23E5CBA2" fill-opacity="0.05" d="M30,50 Q50,20 70,50 Q85,70 65,85 Q50,95 30,75 Q15,60 30,50 Z" /></svg>');
             background-size: 200px;
             opacity: 0.3;
             z-index: -1;
+        }
+
+        /* New color scheme adjustments */
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1E7B1E;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .border-primary {
+            border-color: var(--primary);
+        }
+        
+        .text-secondary {
+            color: var(--secondary);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .text-accent {
+            color: var(--accent);
+        }
+        
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        
+        .text-special {
+            color: var(--special);
+        }
+        
+        .bg-special {
+            background-color: var(--special);
+        }
+        
+        .border-special {
+            border-color: var(--special);
         }
     </style>
     <script>
@@ -189,12 +239,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#FF6B35',
-                        'secondary': '#004E89',
-                        'accent': '#00A5E0',
-                        'dark': '#292F36',
-                        'light': '#F7F7F7',
-                        'fire-accent': '#FF3D00'
+                        'primary': '#228B22',
+                        'secondary': '#333333',
+                        'accent': '#F4EBD0',
+                        'dark': '#1A1A1A',
+                        'light': '#F8F8F8',
+                        'special': '#E5CBA2'
                     }
                 }
             }
@@ -207,16 +257,16 @@
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
                 <div id="logo-container" class="logo-container flex items-center space-x-4">
-                    <img id="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiIGZpbGw9IiMwMDQlODkiLz48L3N2Zz4=" alt="Logo" class="logo rounded-full">
-                    <span id="company-name" class="company-name text-dark font-semibold">Clarity Engineering Company</span>
+                    <img id="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiIGZpbGw9IiMyMjhCMjIiLz48L3N2Zz4=" alt="Logo" class="logo rounded-full">
+                    <span id="company-name" class="company-name text-secondary font-semibold">Clarity Engineering Company</span>
                 </div>
                 <div id="nav-buttons" class="nav-buttons hidden md:flex items-center space-x-8">
                     <a href="#services" class="text-gray-700 hover:text-primary font-medium">Services</a>
                     <a href="#about" class="text-gray-700 hover:text-primary font-medium">Portfolio</a>
                     <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
-                    <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition font-medium">Get in Touch</button>
+                    <button class="btn-primary px-4 py-2 rounded-md hover:bg-opacity-90 transition font-medium">Get in Touch</button>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-dark">
+                <button id="mobile-menu-button" class="md:hidden text-secondary">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -227,7 +277,7 @@
                     <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
                     <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
                     <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
-                    <button class="w-full text-left px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary transition">Get in Touch</button>
+                    <button class="w-full text-left px-4 py-2 btn-primary rounded-md hover:bg-opacity-90 transition">Get in Touch</button>
                 </div>
             </div>
         </div>
@@ -240,8 +290,8 @@
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Engineering Excellence for California's Future</h1>
                 <p class="text-gray-200 text-lg mb-8">With over 30 years of combined expertise, our UCLA-trained engineers deliver innovative solutions for your most challenging projects.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-white text-secondary px-6 py-3 rounded-md text-center hover:bg-gray-100 transition font-medium">Get a Quote</a>
-                    <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-md text-center hover:bg-white hover:bg-opacity-10 transition">Our Services</a>
+                    <a href="#contact" class="bg-accent text-secondary px-6 py-3 rounded-md text-center hover:bg-opacity-90 transition font-medium">Get a Quote</a>
+                    <a href="#services" class="border-2 border-accent text-accent px-6 py-3 rounded-md text-center hover:bg-accent hover:bg-opacity-10 transition">Our Services</a>
                 </div>
             </div>
             <div class="md:w-1/2">
@@ -254,7 +304,7 @@
     <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-dark mb-2">Our Services</h2>
+                <h2 class="text-3xl font-bold text-secondary mb-2">Our Services</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Comprehensive structural engineering solutions tailored to your project needs across California.</p>
             </div>
@@ -265,7 +315,7 @@
                     <div class="text-primary mb-4">
                         <i class="fas fa-home text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark mb-2">Residential Design</h3>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Residential Design</h3>
                     <p class="text-gray-600">Custom structural solutions for single-family homes, multi-unit dwellings, and residential renovations.</p>
                 </a>
                 
@@ -274,7 +324,7 @@
                     <div class="text-primary mb-4">
                         <i class="fas fa-city text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark mb-2">Commercial Projects</h3>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Commercial Projects</h3>
                     <p class="text-gray-600">Structural engineering for retail spaces, offices, and mixed-use developments with complex requirements.</p>
                 </a>
                 
@@ -283,17 +333,17 @@
                     <div class="text-primary mb-4">
                         <i class="fas fa-shield-alt text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark mb-2">Soft-Story Ordinance</h3>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Soft-Story Ordinance</h3>
                     <p class="text-gray-600">Compliance solutions for soft-story buildings to meet seismic safety requirements and local ordinances.</p>
                 </a>
                 
-                <!-- Service Card 4 - Fire Rebuild (Special) -->
-                <a href="#fire-rebuild" class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100 hover:border-fire-accent fire-service relative">
-                    <div class="fire-badge">Specialty</div>
-                    <div class="text-fire-accent mb-4">
+                <!-- Service Card 4 - Special Service -->
+                <a href="#special-service" class="bg-white rounded-lg shadow-md p-6 service-card transition duration-300 border border-gray-100 hover:border-special special-service relative">
+                    <div class="special-badge">Specialty</div>
+                    <div class="text-special mb-4">
                         <i class="fas fa-fire-extinguisher text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark mb-2">Fire Rebuild</h3>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Fire Rebuild</h3>
                     <p class="text-gray-600">Expert structural assessment and reconstruction services for properties affected by wildfires and structural fires.</p>
                 </a>
             </div>
@@ -308,13 +358,13 @@
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-dark mb-4">About Our Practice</h2>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">About Our Practice</h2>
                     <div class="w-20 h-1 bg-primary mb-6"></div>
                     <p class="text-gray-600 mb-4">Founded in 2018 by four UCLA engineering graduates, Clarity Engineering brings together over 30 years of combined experience in structural design and analysis.</p>
                     <p class="text-gray-600 mb-6">Based in Santa Monica, we serve clients throughout California with innovative, cost-effective structural solutions that prioritize safety, sustainability, and architectural vision.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-dark mb-3">Our Approach</h3>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">Our Approach</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
@@ -335,7 +385,7 @@
                         </ul>
                     </div>
                     
-                    <button class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Meet Our Team</button>
+                    <button class="btn-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition">Meet Our Team</button>
                 </div>
             </div>
         </div>
@@ -350,12 +400,12 @@
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Residential Design" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-dark mb-4">Residential Design</h2>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Residential Design</h2>
                     <div class="w-20 h-1 bg-primary mb-6"></div>
                     <p class="text-gray-600 mb-6">Our residential structural engineering services combine aesthetic vision with technical excellence to create safe, durable, and beautiful homes.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-dark mb-3">Our Residential Services Include:</h3>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">Our Residential Services Include:</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mt-1 mr-2"></i>
@@ -380,7 +430,7 @@
                         </ul>
                     </div>
                     
-                    <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Get a Residential Quote</a>
+                    <a href="#contact" class="inline-block btn-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition">Get a Residential Quote</a>
                 </div>
             </div>
         </div>
@@ -394,12 +444,12 @@
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial Projects" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 order-2 md:order-1">
-                    <h2 class="text-3xl font-bold text-dark mb-4">Commercial Projects</h2>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Commercial Projects</h2>
                     <div class="w-20 h-1 bg-primary mb-6"></div>
                     <p class="text-gray-600 mb-6">We provide comprehensive structural engineering services for commercial projects of all sizes, from small retail spaces to large mixed-use developments.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-dark mb-3">Commercial Project Expertise:</h3>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">Commercial Project Expertise:</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mt-1 mr-2"></i>
@@ -424,7 +474,7 @@
                         </ul>
                     </div>
                     
-                    <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Get a Commercial Quote</a>
+                    <a href="#contact" class="inline-block btn-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition">Get a Commercial Quote</a>
                 </div>
             </div>
         </div>
@@ -438,12 +488,12 @@
                     <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1326&q=80" alt="Soft-Story Ordinance" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-dark mb-4">Soft-Story Ordinance Compliance</h2>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Soft-Story Ordinance Compliance</h2>
                     <div class="w-20 h-1 bg-primary mb-6"></div>
                     <p class="text-gray-600 mb-6">We specialize in helping property owners comply with soft-story retrofit ordinances throughout California, ensuring buildings meet seismic safety standards.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-dark mb-3">Our Soft-Story Services:</h3>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">Our Soft-Story Services:</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mt-1 mr-2"></i>
@@ -473,61 +523,61 @@
                         <p class="text-gray-600">Many California cities have mandatory soft-story retrofit programs for vulnerable buildings. We can help determine if your property is affected.</p>
                     </div>
                     
-                    <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Learn About Compliance</a>
+                    <a href="#contact" class="inline-block btn-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition">Learn About Compliance</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fire Rebuild Service (Special Section) -->
-    <section id="fire-rebuild" class="service-section fire-section">
+    <!-- Special Service Section -->
+    <section id="special-service" class="service-section special-section">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 order-1 md:order-2 md:pl-10">
-                    <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fire Rebuild Services" class="rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Special Services" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 order-2 md:order-1">
                     <div class="flex items-center mb-4">
-                        <h2 class="text-3xl font-bold text-dark mr-4">Fire Rebuild Services</h2>
-                        <span class="bg-fire-accent text-white px-3 py-1 rounded-full text-sm font-bold">Specialty</span>
+                        <h2 class="text-3xl font-bold text-secondary mr-4">Fire Rebuild Services</h2>
+                        <span class="bg-special text-secondary px-3 py-1 rounded-full text-sm font-bold">Specialty</span>
                     </div>
-                    <div class="w-20 h-1 bg-fire-accent mb-6"></div>
+                    <div class="w-20 h-1 bg-special mb-6"></div>
                     <p class="text-gray-600 mb-6">Our specialized fire rebuild services help property owners recover from devastating wildfires and structural fires with expert structural assessment and reconstruction planning.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-dark mb-3">Fire Rebuild Expertise:</h3>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">Fire Rebuild Expertise:</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-fire-accent mt-1 mr-2"></i>
+                                <i class="fas fa-check text-special mt-1 mr-2"></i>
                                 <span class="text-gray-600">Post-fire structural damage assessment</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-fire-accent mt-1 mr-2"></i>
+                                <i class="fas fa-check text-special mt-1 mr-2"></i>
                                 <span class="text-gray-600">Fire-resistant material recommendations</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-fire-accent mt-1 mr-2"></i>
+                                <i class="fas fa-check text-special mt-1 mr-2"></i>
                                 <span class="text-gray-600">Wildfire mitigation design strategies</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-fire-accent mt-1 mr-2"></i>
+                                <i class="fas fa-check text-special mt-1 mr-2"></i>
                                 <span class="text-gray-600">Coordination with insurance providers</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-fire-accent mt-1 mr-2"></i>
+                                <i class="fas fa-check text-special mt-1 mr-2"></i>
                                 <span class="text-gray-600">Complete reconstruction structural plans</span>
                             </li>
                         </ul>
                     </div>
                     
-                    <div class="bg-fire-accent bg-opacity-10 p-4 rounded-lg mb-6 border border-fire-accent border-opacity-20">
-                        <h4 class="font-semibold text-fire-accent mb-2">Emergency Response</h4>
+                    <div class="bg-special bg-opacity-30 p-4 rounded-lg mb-6 border border-special border-opacity-20">
+                        <h4 class="font-semibold text-secondary mb-2">Emergency Response</h4>
                         <p class="text-gray-600">We offer expedited services for fire-damaged properties, with 24/7 availability for emergency assessments and immediate stabilization recommendations.</p>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#contact" class="bg-fire-accent text-white px-6 py-3 rounded-md text-center hover:bg-opacity-90 transition font-medium">Emergency Contact</a>
-                        <a href="#contact" class="border-2 border-fire-accent text-fire-accent px-6 py-3 rounded-md text-center hover:bg-fire-accent hover:bg-opacity-10 transition">Rebuild Consultation</a>
+                        <a href="#contact" class="bg-special text-secondary px-6 py-3 rounded-md text-center hover:bg-opacity-90 transition font-medium">Emergency Contact</a>
+                        <a href="#contact" class="border-2 border-special text-secondary px-6 py-3 rounded-md text-center hover:bg-special hover:bg-opacity-10 transition">Rebuild Consultation</a>
                     </div>
                 </div>
             </div>
@@ -537,17 +587,17 @@
     <!-- Hill-side Developments Service -->
     <section id="hillside" class="service-section">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flexocol md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="https://images.unsplash.com/photo-1603921326210-6edd6d0bf2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Hill-side Developments" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-dark mb-4">Hill-side Developments</h2>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Hill-side Developments</h2>
                     <div class="w-20 h-1 bg-primary mb-6"></div>
                     <p class="text-gray-600 mb-6">Our team has extensive experience designing structures for challenging hillside sites, addressing slope stability, foundation design, and geotechnical considerations.</p>
                     
                     <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-dark mb-3">Hillside Engineering Solutions:</h3>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">Hillside Engineering Solutions:</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mt-1 mr-2"></i>
@@ -577,14 +627,14 @@
                         <p class="text-gray-600">Our engineers have successfully completed hundreds of hillside projects throughout Southern California's most challenging terrain.</p>
                     </div>
                     
-                    <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Discuss Your Hillside Project</a>
+                    <a href="#contact" class="inline-block btn-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition">Discuss Your Hillside Project</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-secondary text-white">
+    <section id="contact" class="py-16 bg-primary text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">Contact Us</h2>
@@ -620,7 +670,7 @@
                         <div class="mb-4">
                             <textarea placeholder="Your Message" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 input-focus" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-primary text-white py-2 rounded-md font-medium hover:bg-accent transition">Send Message</button>
+                        <button type="submit" class="w-full bg-accent text-secondary py-2 rounded-md font-medium hover:bg-opacity-90 transition">Send Message</button>
                     </form>
                 </div>
                 
@@ -727,7 +777,7 @@
                         <li><a href="#commercial" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
                         <li><a href="#soft-story" class="text-gray-300 hover:text-white">Soft-Story Ordinance</a></li>
                         <li><a href="#hillside" class="text-gray-300 hover:text-white">Hill-side Developments</a></li>
-                        <li><a href="#fire-rebuild" class="text-gray-300 hover:text-fire-accent">Fire Rebuild</a></li>
+                        <li><a href="#special-service" class="text-gray-300 hover:text-accent">Fire Rebuild</a></li>
                     </ul>
                 </div>
                 
@@ -735,9 +785,9 @@
                     <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
                     <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
                     <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-dark w-full">
-                        <button type="submit" class="bg-primary px-4 py-2 rounded-r-md hover:bg-opacity-90 transition">
-                            <i class="fas fa-paper-plane text-white"></i>
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-secondary w-full">
+                        <button type="submit" class="bg-accent px-4 py-2 rounded-r-md hover:bg-opacity-90 transition">
+                            <i class="fas fa-paper-plane text-secondary"></i>
                         </button>
                     </form>
                 </div>
