@@ -8,21 +8,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #228B22;    /* Forest Green */
-            --secondary: #333333;  /* Charcoal Gray */
-            --accent: #F4EBD0;     /* Warm Sand */
-            --dark: #1A1A1A;       /* Darker Gray */
-            --light: #F8F8F8;      /* Light background */
-            --special: #E5CBA2;    /* Alternative Warm Sand */
+            --primary: #4E9F3D;    /* Basil Green */
+            --secondary: #1E5128;  /* Darker Basil */
+            --accent: #D8E9A8;     /* Pistachio */
+            --dark: #191A19;       /* Very Dark Green */
+            --light: #F8F9F7;      /* Light background */
+            --special: #A3D2CA;    /* Mint Accent */
         }
         
         body {
             background-color: var(--light);
-            color: var(--secondary);
+            color: var(--dark);
         }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            background-color: rgba(25, 26, 25, 0.5); /* Dark overlay with 50% opacity */
         }
         
         .service-card:hover {
@@ -43,7 +50,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(229,203,162,0.05) 0%, rgba(244,235,208,0.05) 100%);
+            background: linear-gradient(135deg, rgba(163,210,202,0.05) 0%, rgba(216,233,168,0.05) 100%);
             z-index: -1;
         }
         
@@ -52,7 +59,7 @@
             top: 20px;
             right: 20px;
             background-color: var(--special);
-            color: var(--secondary);
+            color: var(--dark);
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -70,7 +77,7 @@
         
         .input-focus:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+            box-shadow: 0 0 0 3px rgba(78, 159, 61, 0.2);
         }
         
         .footer-gradient {
@@ -143,12 +150,12 @@
         .mobile-menu a {
             display: block;
             padding: 0.75rem 1rem;
-            color: var(--secondary);
+            color: var(--dark);
             transition: background-color 0.3s ease;
         }
         
         .mobile-menu a:hover {
-            background-color: rgba(34, 139, 34, 0.1);
+            background-color: rgba(78, 159, 61, 0.1);
         }
         
         /* Service section styles */
@@ -166,7 +173,7 @@
         }
         
         .special-section {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(244,235,208,0.3) 100%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(216,233,168,0.3) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -178,7 +185,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23E5CBA2" fill-opacity="0.05" d="M30,50 Q50,20 70,50 Q85,70 65,85 Q50,95 30,75 Q15,60 30,50 Z" /></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23A3D2CA" fill-opacity="0.05" d="M30,50 Q50,20 70,50 Q85,70 65,85 Q50,95 30,75 Q15,60 30,50 Z" /></svg>');
             background-size: 200px;
             opacity: 0.3;
             z-index: -1;
@@ -191,7 +198,7 @@
         }
         
         .btn-primary:hover {
-            background-color: #1E7B1E;
+            background-color: #3E7F2D;
         }
         
         .text-primary {
@@ -239,12 +246,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#228B22',
-                        'secondary': '#333333',
-                        'accent': '#F4EBD0',
-                        'dark': '#1A1A1A',
-                        'light': '#F8F8F8',
-                        'special': '#E5CBA2'
+                        'primary': '#4E9F3D',
+                        'secondary': '#1E5128',
+                        'accent': '#D8E9A8',
+                        'dark': '#191A19',
+                        'light': '#F8F9F7',
+                        'special': '#A3D2CA'
                     }
                 }
             }
@@ -257,7 +264,7 @@
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
                 <div id="logo-container" class="logo-container flex items-center space-x-4">
-                    <img id="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiIGZpbGw9IiMyMjhCMjIiLz48L3N2Zz4=" alt="Logo" class="logo rounded-full">
+                    <img id="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiIGZpbGw9IiM0RTlGM0QiLz48L3N2Zz4=" alt="Logo" class="logo rounded-full">
                     <span id="company-name" class="company-name text-secondary font-semibold">Clarity Engineering Company</span>
                 </div>
                 <div id="nav-buttons" class="nav-buttons hidden md:flex items-center space-x-8">
@@ -283,19 +290,17 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient py-20">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
+    <!-- Hero Section with Photo Background -->
+    <section id="home" class="hero-section py-32">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-2xl">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Engineering Excellence for California's Future</h1>
                 <p class="text-gray-200 text-lg mb-8">With over 30 years of combined expertise, our UCLA-trained engineers deliver innovative solutions for your most challenging projects.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="#contact" class="bg-accent text-secondary px-6 py-3 rounded-md text-center hover:bg-opacity-90 transition font-medium">Get a Quote</a>
                     <a href="#services" class="border-2 border-accent text-accent px-6 py-3 rounded-md text-center hover:bg-accent hover:bg-opacity-10 transition">Our Services</a>
                 </div>
-            </div>
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Structural Engineering" class="rounded-lg shadow-xl">
             </div>
         </div>
     </section>
@@ -395,7 +400,7 @@
     <!-- Residential Service -->
     <section id="residential" class="service-section">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flexocol md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Residential Design" class="rounded-lg shadow-lg">
                 </div>
@@ -439,7 +444,7 @@
     <!-- Commercial Service -->
     <section id="commercial" class="service-section">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flexocol md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 order-1 md:order-2 md:pl-10">
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial Projects" class="rounded-lg shadow-lg">
                 </div>
@@ -483,7 +488,7 @@
     <!-- Soft-Story Ordinance Service -->
     <section id="soft-story" class="service-section">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flexocol md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1326&q=80" alt="Soft-Story Ordinance" class="rounded-lg shadow-lg">
                 </div>
@@ -532,7 +537,7 @@
     <!-- Special Service Section -->
     <section id="special-service" class="service-section special-section">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flexocol md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 order-1 md:order-2 md:pl-10">
                     <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Special Services" class="rounded-lg shadow-lg">
                 </div>
@@ -764,44 +769,44 @@
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-gray-300 hover:text-white">Home</a></li>
                         <li><a href="#services" class="text-gray-300 hover:text-white">Services</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#residential" class="text-gray-300 hover:text-white">Residential Design</a></li>
-                        <li><a href="#commercial" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
-                        <li><a href="#soft-story" class="text-gray-300 hover:text-white">Soft-Story Ordinance</a></li>
-                        <li><a href="#hillside" class="text-gray-300 hover:text-white">Hill-side Developments</a></li>
-                        <li><a href="#special-service" class="text-gray-300 hover:text-accent">Fire Rebuild</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
-                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-secondary w-full">
-                        <button type="submit" class="bg-accent px-4 py-2 rounded-r-md hover:bg-opacity-90 transition">
-                            <i class="fas fa-paper-plane text-secondary"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
+        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="font-semibold text-lg mb-4">Services</h4>
+      <ul class="space-y-2">
+        <li><a href="#residential" class="text-gray-300 hover:text-white">Residential Design</a></li>
+        <li><a href="#commercial" class="text-gray-300 hover:text-white">Commercial Projects</a></li>
+        <li><a href="#soft-story" class="text-gray-300 hover:text-white">Soft-Story Ordinance</a></li>
+        <li><a href="#hillside" class="text-gray-300 hover:text-white">Hill-side Developments</a></li>
+        <li><a href="#special-service" class="text-gray-300 hover:text-accent">Fire Rebuild</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
+      <p class="text-gray-300 mb-4">Subscribe to our newsletter for engineering insights and company updates.</p>
+      <form class="flex">
+        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-secondary w-full">
+        <button type="submit" class="bg-accent px-4 py-2 rounded-r-md hover:bg-opacity-90 transition">
+          <i class="fas fa-paper-plane text-secondary"></i>
+        </button>
+      </form>
+    </div>
+  </div>
 
-            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2025 Clarity Engineering Co. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-300 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-300 hover:text-white text-sm">Sitemap</a>
-                </div>
-            </div>
-        </div>
+  <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+    <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2025 Clarity Engineering Co. All rights reserved.</p>
+    <div class="flex space-x-6">
+      <a href="#" class="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
+      <a href="#" class="text-gray-300 hover:text-white text-sm">Terms of Service</a>
+      <a href="#" class="text-gray-300 hover:text-white text-sm">Sitemap</a>
+    </div>
+  </div>
+</div>
     </footer>
 
     <script>
